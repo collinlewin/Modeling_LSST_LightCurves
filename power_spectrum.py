@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import numpy as np
 import pandas as pd
 import scipy.fftpack
@@ -11,10 +5,6 @@ import ast
 from scipy.stats import binned_statistic
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-
-
-# In[ ]:
-
 
 def psd(t, y, freq_bins):
     """
@@ -168,4 +158,3 @@ def psdslopes_across_dataset(gpreals_path, n_series, freq_bins, band, cadence, k
         _,_ = fit_psd(freq, psd_avg, psd_std, plot_psd=True)
         
     return psd_avg, psd_std, psd_slope_avg, psd_slope_std
-

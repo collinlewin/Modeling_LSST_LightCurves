@@ -1,19 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
-
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from glob import glob
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, RationalQuadratic, Matern, ConstantKernel as Constant
-
-
-# In[5]:
-
 
 def gp_regression(df, band, cadence, kernel_form, t_samprate, n_samples, lognorm):
     """
@@ -76,9 +66,6 @@ def gp_regression(df, band, cadence, kernel_form, t_samprate, n_samples, lognorm
     
     else:
         return gp_model, None
-
-
-# In[6]:
 
 
 def gpr_on_dataset(lcdir_path, band, cadence, kernel_form, t_samprate, n_samples, lognorm):
