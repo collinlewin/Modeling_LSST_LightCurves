@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import numpy as np
 import pandas as pd
 import scipy.fftpack
@@ -11,10 +5,6 @@ import ast
 from scipy.stats import binned_statistic
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-
-
-# In[ ]:
-
 
 def psd(t, y, freq_bins):
     """
