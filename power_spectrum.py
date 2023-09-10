@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 import numpy as np
 import pandas as pd
 import scipy.fftpack
@@ -5,6 +11,10 @@ import ast
 from scipy.stats import binned_statistic
 import matplotlib.pyplot as plt
 from tqdm import tqdm
+
+
+# In[ ]:
+
 
 def psd(t, y, freq_bins):
     """
@@ -126,7 +136,7 @@ def psdslopes_across_dataset(gpreals_path, n_series, freq_bins, band, cadence, k
     Returns:
     - psd_avg (np.array): Average PSD for all light curves.
     - psd_std (np.array): Standard deviation of the PSDs.
-    - slopes (np.array): Slopes of the power law fits to the PSDs.
+    - psd_slopes (np.array): Slopes of the power law fits to the PSDs.
     """ 
     freq = np.sqrt(freq_bins[:-1] * freq_bins[1:]) # geometric mean for plotting purposes
     psds = np.zeros([n_series, len(freq_bins)-1])
@@ -157,4 +167,5 @@ def psdslopes_across_dataset(gpreals_path, n_series, freq_bins, band, cadence, k
     if plot_psd:
         _,_ = fit_psd(freq, psd_avg, psd_std, plot_psd=True)
         
-    return psd_avg, psd_std, psd_slope_avg, psd_slope_std
+    return psd_avg, psd_std, psd_slopes
+
